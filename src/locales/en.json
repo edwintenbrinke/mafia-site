@@ -1,0 +1,30 @@
+{
+  "ct": "CT",
+  "tim": "تيم الإبداعية",
+  "plan": "Choose Plan",
+  "nav": {
+    "admin": "Admin",
+    "dashboard": "Dashboard",
+    "login": "Login Page",
+    "mail": "Mail",
+    "organization": "Organization",
+    "point_of_service": "Locations",
+    "receipt": "Receipt",
+    "terms_of_service": "Terms of service",
+    "privacy_policy": "Privacy policy",
+    "profile": "Profile"
+  },
+  "page": {
+    "admin": {
+      "organization": "Organization",
+      "organization_create": "Create organization",
+      "organization_edit": "Edit organization"
+    },
+    "point_of_service": "Locations",
+    "point_of_service_create": "Create location",
+    "point_of_service_edit": "Edit location",
+    "terms_of_service": "Terms of service",
+    "privacy_policy": "Privacy policy",
+    "user_profile": "Profile"
+  }
+}
