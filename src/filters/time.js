@@ -1,7 +1,6 @@
 import Vue from 'vue'
 
 Vue.filter('millisecondsToCooldown', function(milliseconds) {
-    console.log(milliseconds)
     if (milliseconds <= 1000) return 'now';
 
     var hours   = Math.floor((milliseconds % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));

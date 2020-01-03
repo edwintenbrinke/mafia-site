@@ -4,9 +4,9 @@
     fluid
     tag="section"
   >
-    <cooldown-button name="crime" :cooldown="crimeCooldown" v-on:execute="executeCrime" />
-    <cooldown-button name="og crime" :cooldown="organizedCrimeCooldown" v-on:execute="executeOrganizedCrime" />
-    <cooldown-button name="GTA" :cooldown="grandTheftAutoCooldown" v-on:execute="executeGrandTheftAuto" />
+    <cooldown-button name="crime" :cooldown="$store.state.user.cooldown.crime" v-on:execute="executeCrime" />
+    <cooldown-button name="og crime" :cooldown="$store.state.user.cooldown.organized_crime" v-on:execute="executeOrganizedCrime" />
+    <cooldown-button name="GTA" :cooldown="$store.state.user.cooldown.grand_theft_auto" v-on:execute="executeGrandTheftAuto" />
     <button @click="test">test</button>
   </v-container>
 
@@ -19,13 +19,6 @@
     name: 'DeshboardTest',
     components: {
       CooldownButton: () => import('./components/custom/CooldownButton'),
-    },
-    computed: {
-      ...mapGetters([
-        'crimeCooldown',
-        'organizedCrimeCooldown',
-        'grandTheftAutoCooldown'
-      ])
     },
     methods: {
       executeCrime: function () {
