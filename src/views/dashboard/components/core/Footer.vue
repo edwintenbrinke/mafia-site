@@ -31,7 +31,7 @@
         >
           <div class="body-1 font-weight-light pt-6 pt-md-0 text-center">
             &copy; 2019,
-            <a href="https://www.extendas.com/">Extendas</a>
+            <a href="https://www.edwintenbrinke.nl/">Edwin ten Brinke</a>
           </div>
         </v-col>
       </v-row>

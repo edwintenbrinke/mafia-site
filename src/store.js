@@ -14,20 +14,19 @@ export default new Vuex.Store({
     changes: false,
 
     user: {
-      experience:10010,
-      cash:30153,
-      bank:1000,
-      counter:{crime:86,organized_crime:10},
-      cooldown:{crime:"2020-01-02T17:19:50+01:00",organized_crime:"2020-01-02T17:22:43+01:00"},
+      experience:0,
+      cash:0,
+      bank:0,
+      counter:{crime:0,organized_crime:0, grand_theft_auto:0},
+      cooldown:{crime:"2020-01-02T17:19:50+01:00",organized_crime:"2020-01-02T17:22:43+01:00",grand_theft_auto:"2020-01-02T17:22:43+01:00"},
       created_at:"2019-12-30T16:04:58+01:00",
       updated_at:"2020-01-02T17:19:45+01:00"
     },
-    crimeCooldown: "2020-01-02T11:28:21+0100",
-    organizedCrimeCooldown: "2020-01-02T11:28:21+0100"
   },
   getters: {
     crimeCooldown: state => state.user.cooldown.crime,
     organizedCrimeCooldown: state => state.user.cooldown.organized_crime,
+    grandTheftAutoCooldown: state => state.user.cooldown.grand_theft_auto,
   },
   mutations: {
     // TEMPLATE
@@ -59,6 +58,9 @@ export default new Vuex.Store({
     },
     setOrganizedCrimeCooldown (state, payload) {
       state.user.cooldown.organized_crime = payload
+    },
+    setGrandTheftAutoCooldown (state, payload) {
+      state.user.cooldown.grand_theft_auto = payload
     }
   },
   actions: {

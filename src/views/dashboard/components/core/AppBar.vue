@@ -45,6 +45,17 @@
         <cooldown classes="body-1 font-weight-light pa-1" :cooldown="organizedCrimeCooldown" />
       </v-card>
 
+      <v-card
+        class="margin-null v-card--plan pb-2 px-2 text-center"
+        max-width="100%"
+      >
+        <div
+          class="body-2 text-uppercase grey--text"
+          v-text="`GTA`"
+        />
+        <cooldown classes="body-1 font-weight-light pa-1" :cooldown="grandTheftAutoCooldown" />
+      </v-card>
+
     <v-spacer />
 
 
@@ -87,7 +98,11 @@
 
     computed: {
       ...mapState(['drawer']),
-      ...mapGetters(['crimeCooldown', 'organizedCrimeCooldown'])
+      ...mapGetters([
+        'crimeCooldown',
+        'organizedCrimeCooldown',
+        'grandTheftAutoCooldown'
+      ])
     },
 
     mounted() {
@@ -102,6 +117,7 @@
               this.$store.commit('setUser', data);
               this.$store.commit('setCrimeCooldown', data.cooldown.crime);
               this.$store.commit('setOrganizedCrimeCooldown', data.cooldown.organized_crime);
+              this.$store.commit('setGrandTheftAutoCooldown', data.cooldown.grand_theft_auto);
             }
           }
         )
