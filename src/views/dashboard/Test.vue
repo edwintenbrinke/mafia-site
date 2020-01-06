@@ -8,6 +8,7 @@
     <cooldown-button name="og crime" :cooldown="$store.state.user.cooldown.organized_crime" v-on:execute="executeOrganizedCrime" />
     <cooldown-button name="GTA" :cooldown="$store.state.user.cooldown.grand_theft_auto" v-on:execute="executeGrandTheftAuto" />
     <button @click="test">test</button>
+    <v-img :src="car_image" width="450" height="350"/>
   </v-container>
 
 </template>
@@ -20,6 +21,11 @@
     components: {
       CooldownButton: () => import('./components/custom/CooldownButton'),
     },
+    data() {
+      return {
+        car_image: "http://localhost:8000/images/cars/subaru_wrx_sti.jpg",
+      }
+    },
     methods: {
       executeCrime: function () {
         this.$http.post(`/crime/standard`)
@@ -28,6 +34,15 @@
             this.$store.commit('setCrimeCooldown', response.data.cooldown);
           })
           .catch((error) => {
+            if (error.response.status === 400) {
+              let response = JSON.parse(error.response.data.detail);
+              console.log(response,2);
+              if (response.error_code === 1) {
+                this.$toasted.global.error(response.message)
+                this.$store.commit('setCrimeCooldown', response.cooldown);
+              }
+            }
+
             console.log(error.response)
           })
       },
@@ -44,6 +59,10 @@
       executeGrandTheftAuto: function () {
         this.$http.post(`/crime/grand-theft-auto`)
           .then((response) => {
+            if (response.data.car) {
+              this.car_image = `http://localhost:8000/images/cars/${response.data.car.image_path}`;
+            }
+
             this.$toasted.global.success(response.data.message)
             this.$store.commit('setGrandTheftAutoCooldown', response.data.cooldown);
           })
