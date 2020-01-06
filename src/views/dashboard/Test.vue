@@ -24,7 +24,6 @@
       executeCrime: function () {
         this.$http.post(`/crime/standard`)
           .then((response) => {
-            console.log(response);
             this.$toasted.global.success(response.data.message)
             this.$store.commit('setCrimeCooldown', response.data.cooldown);
           })
@@ -35,7 +34,6 @@
       executeOrganizedCrime: function () {
         this.$http.post(`/crime/organized`)
           .then((response) => {
-            console.log(response);
             this.$toasted.global.success(response.data.message)
             this.$store.commit('setOrganizedCrimeCooldown', response.data.cooldown);
           })
@@ -46,7 +44,6 @@
       executeGrandTheftAuto: function () {
         this.$http.post(`/crime/grand-theft-auto`)
           .then((response) => {
-            console.log(response);
             this.$toasted.global.success(response.data.message)
             this.$store.commit('setGrandTheftAutoCooldown', response.data.cooldown);
           })
@@ -55,7 +52,8 @@
           })
       },
       test: function () {
-        this.$store.commit('setCrimeCooldown', '2020-01-02T13:49:27+0100');
+        // this.$store.commit('setCrimeCooldown', '2020-01-02T13:49:27+0100');
+        this.$store.state.http_progress = 50;
       }
     }
   }

@@ -26,6 +26,7 @@ import './plugins/toasted'
 import './plugins/vue-lodash'
 import './plugins/vue-country-flag'
 import './plugins/google-maps'
+import './plugins/vue-progressbar'
 
 import './filters/time'
 

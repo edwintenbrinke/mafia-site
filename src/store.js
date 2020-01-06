@@ -61,7 +61,7 @@ export default new Vuex.Store({
     },
     setGrandTheftAutoCooldown (state, payload) {
       state.user.cooldown.grand_theft_auto = payload
-    }
+    },
   },
   actions: {
 
