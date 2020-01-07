@@ -29,6 +29,7 @@ import './plugins/google-maps'
 import './plugins/vue-progressbar'
 
 import './filters/time'
+import './filters/money'
 
 import vuetify from './plugins/vuetify'
 import i18n from './i18n'

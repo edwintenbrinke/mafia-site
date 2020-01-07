@@ -27,6 +27,7 @@ Vue.prototype.$http.interceptors.response.use(
   },
   function (error) {
     Vue.prototype.$Progress.fail();
+
     if (error.message === 'Network Error') {
       Vue.prototype.$_logout('The site is currently unavailable, try again later.')
     }

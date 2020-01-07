@@ -55,6 +55,12 @@ export default [
         meta: { authRequired: true },
         component: () => import('@/views/dashboard/Test'),
       },
+      {
+        name: 'garage',
+        path: 'garage',
+        meta: { authRequired: true },
+        component: () => import('@/views/dashboard/Garage'),
+      },
     ],
   },
   {

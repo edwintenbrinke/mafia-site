@@ -21,4 +21,9 @@ export default [
     title: 'nav.dashboard',
     to: '/test',
   },
+  {
+    icon: 'mdi-view-dashboard',
+    title: 'nav.garage',
+    to: '/garage',
+  },
 ]
