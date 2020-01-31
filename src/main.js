@@ -29,6 +29,8 @@ import './plugins/google-maps'
 import './plugins/vue-progressbar'
 
 import './filters/time'
+import './filters/secondsToDays'
+import './filters/localizedDatetime'
 import './filters/money'
 
 import vuetify from './plugins/vuetify'

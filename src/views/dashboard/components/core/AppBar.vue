@@ -20,56 +20,20 @@
         mdi-dots-vertical
       </v-icon>
     </v-btn>
-
+    <v-spacer />
+    last update: {{ $store.state.server.last_process | localizedDatetime }}
     <v-spacer />
 
-      <v-card
-        class="margin-null v-card--plan pb-2 px-2 text-center"
-        max-width="100%"
-      >
-        <div
-          class="body-2 text-uppercase grey--text"
-          v-text="`crime`"
-        />
-        <cooldown classes="body-1 font-weight-light pa-1" :cooldown="$store.state.user.cooldown.crime" />
-      </v-card>
-
-      <v-card
-        class="margin-null v-card--plan pb-2 px-2 text-center"
-        max-width="100%"
-      >
-        <div
-          class="body-2 text-uppercase grey--text"
-          v-text="`organized crime`"
-        />
-        <cooldown classes="body-1 font-weight-light pa-1" :cooldown="$store.state.user.cooldown.organized_crime" />
-      </v-card>
-
-      <v-card
-        class="margin-null v-card--plan pb-2 px-2 text-center"
-        max-width="100%"
-      >
-        <div
-          class="body-2 text-uppercase grey--text"
-          v-text="`GTA`"
-        />
-        <cooldown classes="body-1 font-weight-light pa-1" :cooldown="$store.state.user.cooldown.grand_theft_auto" />
-      </v-card>
-
-    <v-spacer />
-
-
-
-    <v-btn
-      class="white"
-      @click="$_logout(null)"
-    >
-      <v-icon
-        left
-        v-text="logout_icon"
-      />
-      Logout
-    </v-btn>
+<!--    <v-btn-->
+<!--      class="white"-->
+<!--      @click="$_logout(null)"-->
+<!--    >-->
+<!--      <v-icon-->
+<!--        left-->
+<!--        v-text="logout_icon"-->
+<!--      />-->
+<!--      Logout-->
+<!--    </v-btn>-->
   </v-app-bar>
 </template>
 
@@ -79,12 +43,9 @@
 
   // Utilities
   import { mapState, mapMutations, mapGetters } from 'vuex'
-  import CooldownButton from "../custom/CooldownButton";
-  import Cooldown from "../custom/Cooldown";
 
   export default {
     name: 'DashboardCoreAppBar',
-    components: {Cooldown, CooldownButton},
     props: {
       value: {
         type: Boolean,
@@ -100,19 +61,7 @@
       ...mapState(['drawer']),
     },
 
-    mounted() {
-      // TODO Not happy with this
-      // place it somewhere else
-      // problem with that the listeners need to get set before this data is gotten
-      this.$http.get('/user/profile')
-        .then((response) => {
-            let data = response.data[0];
-            if (data.cooldown)
-            {
-              this.$store.commit('setUser', data);
-            }
-          }
-        )
+    mounted () {
     },
 
     methods: {

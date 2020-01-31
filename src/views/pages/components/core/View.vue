@@ -12,7 +12,7 @@
       gradient="to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)"
       min-height="100%"
     >
-        <router-view />
+      <router-view />
     </v-img>
   </v-content>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <vue-progress-bar/>
+    <vue-progress-bar />
 
     <dashboard-core-app-bar v-model="expandOnHover" />
 
@@ -8,7 +8,7 @@
 
     <dashboard-core-view />
 
-<!--    <dashboard-mercure />-->
+    <!--    <dashboard-mercure />-->
   </v-app>
 </template>
 
@@ -26,5 +26,12 @@
     data: () => ({
       expandOnHover: false,
     }),
+
+    mounted() {
+      this.$http.get('/api/server')
+        .then(response => {
+          this.$store.state.server = response.data;
+        })
+    }
   }
 </script>

@@ -1,30 +1,14 @@
 {
-  "ct": "CT",
-  "tim": "تيم الإبداعية",
-  "plan": "Choose Plan",
   "nav": {
     "admin": "Admin",
     "dashboard": "Dashboard",
     "login": "Login Page",
-    "mail": "Mail",
-    "organization": "Organisatie",
-    "point_of_service": "Locaties",
-    "receipt": "Bon regels",
-    "terms_of_service": "Terms of service",
-    "privacy_policy": "Privacy policy",
-    "profile": "Profiel"
-  },
-  "page": {
-    "admin": {
-      "organization": "Organisatie",
-      "organization_create": "Organisatie aanmaken",
-      "organization_edit": "Organisatie aanpassen"
-    },
-    "point_of_service": "Locaties",
-    "point_of_service_create": "Locatie aanmaken",
-    "point_of_service_edit": "Locatie aanpassen",
-    "terms_of_service": "Terms of service",
-    "privacy_policy": "Privacy policy",
-    "user_profile": "Profiel"
+    "sell": "Verkocht",
+    "buy": "Gekocht",
+    "craft": "Gemaakt",
+    "harvest": "Geoogst",
+    "pickup": "Opgepakt",
+    "place": "Geplaatst",
+    "play": "Speel tijd"
   }
 }

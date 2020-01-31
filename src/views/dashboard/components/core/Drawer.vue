@@ -14,7 +14,7 @@
       <v-list-item-content>
         <v-list-item-title class="text-uppercase font-weight-regular display-2">
           <v-img
-            :src="require(`@/assets/logo-Extendas.svg`)"
+            :src="require(`@/assets/eco-logo-new.png`)"
             height="100%"
           />
         </v-list-item-title>

@@ -29,9 +29,9 @@ export default {
     return this.checkLogin() ? JSON.parse(atob(this.getCookie('user'))) : false
   },
   checkLogin: function () {
-    return true //(this.getCookie('user').length > 0)
+    return true // (this.getCookie('user').length > 0)
   },
   checkAdmin: function () {
-    return true //this.checkLogin() ? (this.getUserCookie()).admin : false
+    return true // this.checkLogin() ? (this.getUserCookie()).admin : false
   },
 }

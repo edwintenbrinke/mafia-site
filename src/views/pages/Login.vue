@@ -88,11 +88,10 @@
 
     methods: {
       signIn: function () {
-
         this.$store.commit('setAuth', true)
         this.$store.commit('setAdmin', CookieHelper.checkAdmin())
         this.$router.push({ name: 'dashboard' })
-        return;
+        return
 
         this.$http.post(
           'token/portal/login',
