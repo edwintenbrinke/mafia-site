@@ -11,11 +11,11 @@ export default [
   //     },
   //   ],
   // },
-  {
-    icon: 'mdi-view-dashboard',
-    title: 'nav.dashboard',
-    to: '/',
-  },
+  // {
+  //   icon: 'mdi-view-dashboard',
+  //   title: 'nav.dashboard',
+  //   to: '/',
+  // },
   {
     icon: 'mdi-cart-minus',
     title: 'nav.sell',
